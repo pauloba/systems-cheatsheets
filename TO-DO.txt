@@ -1,0 +1,16 @@
+Add to docker pdf
+
+
+Creating the Dockerfile can be done using a heredoc.
+A heredoc, short for here document, is a way to define a multi-line string literal in programming languages.
+It allows you to create a block of text that spans multiple lines without having to use escape characters to concatenate multiple stings.
+
+To create a Dockerfile in this directory run the following cat command to use a heredoc:
+
+cat << EOF > Dockerfile
+FROM nginx:latest
+
+COPY . /usr/share/nginx/html
+
+EXPOSE 80
+EOF
