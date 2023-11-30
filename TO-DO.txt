@@ -1,5 +1,0 @@
-ADD TO gke-cheatsheet.pdf
-
-- Decode k8s secrets
-
-echo [BASE64-ENCODED-TEXT]] | base64 --decode
