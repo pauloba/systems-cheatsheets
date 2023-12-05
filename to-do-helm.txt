@@ -84,15 +84,6 @@ $ helm install bitnami/kafka \
 DELETE AN APP DEPLOYED WITH HELM FROM A K8S CLUSTER:
 $ helm delete --purge kafka-prod
 
-###################################################################################
-###  																			###	
-###  TO DO: finish the doc; add CLI examples									###
-###  																			###
-###  https://medium.com/dwarves-foundation/kubernetes-helm-101-78f70eeb0d1		###
-###  																			###
-###################################################################################
-
-
 
 
 PRINT HISTORICAL REVISIONS FOR A GIVEN RELEASE:
@@ -111,3 +102,55 @@ REVISION	UPDATED                 	STATUS    	CHART               	APP VERSION	DE
 CHECK VALUES OF A GIVEN HELM CHART VERSION:
 
 $ helm show values ingress-nginx/ingress-nginx --version v4.8.4
+
+
+
+HELM REPOSITORIES:
+
+Helm chart repositories are remote servers containing a collection of Kubernetes resource files. 
+Charts are displayed in directory trees and packaged into Helm chart repositories.
+
+$ helm repo add eks-charts https://aws.github.io/eks-charts/
+
+
+
+ADD HELM REPOSITORIES:
+
+The general syntax for adding a Helm chart repository is:
+$ helm repo add [NAME] [URL] [flags]
+
+To add official stable Helm charts, enter the following command:
+$ Helm repo add stable https://charts.helm.sh/stable
+
+
+
+LIST THE CONTENTS OF A REPOSITORY:
+
+$ helm search repo stable
+
+
+
+UPDATE HELM REPOSITORIES:
+
+$ helm repo update
+
+
+
+
+REMOVE HELM REPOSITORIES:
+
+$ helm repo remove [REPO1 REPO2 ... REPOn] [flags]
+
+$ helm repo remove stable
+
+
+
+
+
+###################################################################################
+###  																			###	
+###  TO DO: finish the doc; add hacks and examples from:						###
+###  																			###
+###  https://helm.sh/docs/howto/charts_tips_and_tricks/							###
+###  																			###
+###################################################################################
