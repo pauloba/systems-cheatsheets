@@ -146,11 +146,38 @@ $ helm repo remove stable
 
 
 
+KUBECTL SHORT NAMES
+
+$ kubectl --namespace=production describe horizontalpodautoscalers
+
+Even with shell autocompletion, is a long command to type. Thankfully, the k8s community maintains short identifiers for common resource types.
+That same command can be shortened to:
+
+$ kubectl -n production describe hpa
+ 
+
+
+KUBECTL LIST SHORT NAMES
+
+TO LIST Short names for k8s commands, run:
+
+$ kubectl api-resources
+NAME                              SHORTNAMES   APIVERSION                             NAMESPACED   KIND
+bindings                                       v1                                     true         Binding
+componentstatuses                 cs           v1                                     false        ComponentStatus
+configmaps                        cm           v1                                     true         ConfigMap
+endpoints                         ep           v1                                     true         Endpoints
+events                            ev           v1                                     true         Event
+limitranges                       limits       v1                                     true         LimitRange
+namespaces                        ns           v1                                     false        Namespace
+nodes                             no           v1                                     false        Node
+persistentvolumeclaims            pvc          v1                                     true         PersistentVolumeClaim
+persistentvolumes                 pv           v1                                     false        PersistentVolume
+pods                              po           v1                                     true         Pod
+[...]
+
 
 ###################################################################################
-###  																			###	
-###  TO DO: finish the doc; add hacks and examples from:						###
-###  																			###
-###  https://helm.sh/docs/howto/charts_tips_and_tricks/							###
-###  																			###
-###################################################################################
+TO DO: 
+- finish the doc; add hacks and examples from: https://helm.sh/docs/howto/charts_tips_and_tricks/
+- add kubectl tips and tricks
