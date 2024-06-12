@@ -17,3 +17,16 @@ kubectl run busybox --rm -ti --image=busybox:1.28 -- /bin/sh
 
 
 
+GIT
+
+
+How do I ignore an error on 'git pull' about my local changes would be overwritten by merge?
+
+
+If you want remove all local changes - including files that are untracked by git - from your working copy, simply stash them:
+
+git stash push --include-untracked
+If you don't need them anymore, you now can drop that stash:
+
+git stash drop
+If you don't want to stash changes that you already staged - e.g. with git add - then add the option --keep-index. Note however, that this will still prevent merging if those staged changes collide with the ones from upstream.
