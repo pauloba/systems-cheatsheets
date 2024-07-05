@@ -1,0 +1,32 @@
+BusyBox combines tiny versions of many common UNIX utilities into a single small executable. 
+It provides replacements for most of the utilities you usually find in GNU fileutils, shellutils, etc. 
+The utilities in BusyBox generally have fewer options than their full-featured GNU cousins; 
+however, the options that are included provide the expected functionality and behave very much like their GNU counterparts. 
+BusyBox provides a fairly complete environment for any small or embedded system.
+
+BusyBox has been written with size-optimization and limited resources in mind. 
+It is also extremely modular so you can easily include or exclude commands (or features) at compile time. 
+This makes it easy to customize your embedded systems. 
+To create a working system, just add some device nodes in /dev, a few configuration files in /etc, and a Linux kernel.
+
+https://kubernetes.io/docs/tasks/administer-cluster/declare-network-policy/#test-the-service-by-accessing-it-from-another-pod
+
+
+deploy busybox one liner
+kubectl run busybox --rm -ti --image=busybox:1.28 -- /bin/sh
+
+
+
+GIT
+
+
+How do I ignore an error on 'git pull' about my local changes would be overwritten by merge?
+
+
+If you want remove all local changes - including files that are untracked by git - from your working copy, simply stash them:
+
+git stash push --include-untracked
+If you don't need them anymore, you now can drop that stash:
+
+git stash drop
+If you don't want to stash changes that you already staged - e.g. with git add - then add the option --keep-index. Note however, that this will still prevent merging if those staged changes collide with the ones from upstream.
